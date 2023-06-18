@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.conatinerWrap{
+    @apply container mx-auto max-w-4xl
+}
