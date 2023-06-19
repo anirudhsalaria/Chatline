@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Message from './Message'
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { db } from '../firebase';
 
 const ChatBox = () => {
+    
+
     const messages = [{
         id: 1,
         text: 'Hello World',
@@ -23,10 +25,12 @@ const ChatBox = () => {
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             const messages = [];
             querySnapshot.forEach((doc) => {
-                // messages.push(doc.data().name);
-                console.log(doc.data());
+                messages.push({...doc.data(),id: doc.id});
             });
+            console.log(messages)
         });
+
+        return () => unsubscribe;
     }, []);
 
     return (
