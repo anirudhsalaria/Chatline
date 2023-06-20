@@ -1,3 +1,4 @@
+import './App.css';
 import Navbar from "./components/Navbar";
 import ChatRoom from "./pages/ChatRoom";
 import Login from "./pages/login";
