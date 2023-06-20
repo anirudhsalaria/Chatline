@@ -1,22 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Message from './Message'
-import { collection, query, where, onSnapshot } from "firebase/firestore";
+import { collection, query, where, onSnapshot, orderBy, limit } from "firebase/firestore";
 import { db } from '../firebase';
 
 const ChatBox = () => {
-    
+    const [messages,setMessages] = useState([]);
 
-    const messages = [{
-        id: 1,
-        text: 'Hello World',
-        name: "Anirudh"
-    },
-    {
-        id: 2,
-        text: 'hi',
-        name: "Ani"
-    }
-    ]
 
     useEffect(() => {
         const q = query(
@@ -27,7 +16,7 @@ const ChatBox = () => {
             querySnapshot.forEach((doc) => {
                 messages.push({...doc.data(),id: doc.id});
             });
-            console.log(messages)
+            setMessages(messages)
         });
 
         return () => unsubscribe;
@@ -35,11 +24,11 @@ const ChatBox = () => {
 
     return (
         <div className='pb-44 pt-20 conatinerWrap'>
-            {messages.map(message => (
+            {messages.map((message) => (
                 <Message key={message.id} message={message} />
             ))}
         </div>
-    )
-}
+    );
+};
 
 export default ChatBox
