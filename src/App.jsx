@@ -1,4 +1,4 @@
-import './App.css';
+import React from "react";
 import Navbar from "./components/Navbar";
 import ChatRoom from "./pages/ChatRoom";
 import { Routes,Route } from "react-router-dom";
