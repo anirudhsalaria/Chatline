@@ -4,11 +4,11 @@ import { collection, query, where, onSnapshot, orderBy, limit } from "firebase/f
 import { db } from '../firebase';
 
 const ChatBox = () => {
-    const [messages,setMessages] = useState([]);
+    const [messages, setMessages] = useState([]);
     const messagesEndRef = useRef();
 
     const scrollToBottom = () => {
-        messagesEndRef.current.scrollIntoView({behavior :"smooth"})
+        messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
     };
 
     useEffect(scrollToBottom, [messages]);
@@ -22,7 +22,7 @@ const ChatBox = () => {
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             const messages = [];
             querySnapshot.forEach((doc) => {
-                messages.push({...doc.data(),id: doc.id});
+                messages.push({ ...doc.data(), id: doc.id });
             });
             setMessages(messages)
         });
@@ -36,7 +36,7 @@ const ChatBox = () => {
                 <Message key={message.id} message={message} />
             ))}
             <div ref={messagesEndRef}>
-                
+
             </div>
         </div>
     );

@@ -5,8 +5,8 @@ import SendMessage from '../components/SendMessage'
 const ChatRoom = () => {
   return (
     <div>
-      <ChatBox/>
-      <SendMessage/>
+      <ChatBox />
+      <SendMessage />
     </div>
   )
 }

@@ -2,12 +2,12 @@ import React from 'react'
 import { UserAuth } from '../context/AuthContext'
 
 const Navbar = () => {
-    const { currentUser,logout } = UserAuth();
+    const { currentUser, logout } = UserAuth();
 
     const handleLogout = async () => {
-        try{
+        try {
             await logout();
-        }catch(error){
+        } catch (error) {
             console.log(error)
         }
     }
