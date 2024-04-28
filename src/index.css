@@ -5,3 +5,44 @@
 .conatinerWrap{
     @apply container mx-auto max-w-4xl
 }
+
+.studentdashboardbanner{
+    background-image: url('https://xgeeksweb.com/wp-content/uploads/2023/06/DSC_0008aaaa-1.jpg');
+    content: "";
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgba(7, 9, 10, 0.8);
+    background-attachment: fixed;
+    height: 100vh;
+  }
+
+  .loginContent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: rgba(19, 35, 47, 0.9);;
+    padding: 14px 28px;
+    border-radius: 6px;
+    max-width: 450px;
+    min-width: 450px;
+    height: 300px;
+  }
+
+  .applybutton{
+    transition: 0.5s;
+  }
+  .applybutton:hover{
+    transform: scale(1.05);
+    border: 2px solid white;
+  }
+
+  .loginbackground{
+    background-image: url("https://smvdu.ac.in/wp-content/uploads/2023/12/admin-1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

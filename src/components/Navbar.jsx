@@ -13,9 +13,9 @@ const Navbar = () => {
     }
 
     return (
-        <div className='navbar fixed z-10 bg-neutral text-neutral-content'>
+        <div className='navbar fixed z-10 text-neutral-content bg-slate-900'>
             <div className="conatinerWrap flex justify-between">
-                <a className="btn btn-ghost normal-case text-xl">Chatline</a>
+                <a className="btn btn-ghost normal-case text-xl">SMVDU ADMISSIONS</a>
                 {currentUser ? <button onClick={handleLogout} className='btn btn-primary'>Logout</button> : ""}
             </div>
         </div>
